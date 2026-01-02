@@ -15,7 +15,8 @@ def load_data():
     
     # Clean Annual CTC column: Keep only numbers for calculation
     # Column name: "If placed, what is the annual CTC (salary) including all benefits?"
-    salary_col = "If placed, what is the annual CTC (salary) including all benefits?"
+    salary_col = "Annual CTC (₹ per year) : Annual CTC refers to the total yearly compensation offered by the employer (Annual Gross Salary including Basic + allowances + bonuses+PF ) (not monthly take home salary). Please enter digits only, without commas, and do not add “Rs.” or the rupee symbol or any words.
+Example: 430000"
     df[salary_col] = pd.to_numeric(df[salary_col].astype(str).str.replace(r'[^0-9.]', '', regex=True), errors='coerce')
     
     # Ensure Year is numeric
